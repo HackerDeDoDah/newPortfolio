@@ -283,6 +283,7 @@ body {
 
 .project-card img {
     width: 100%;
+    border: 2px solid #4a2c2c;
     border-radius: 4px;
     margin-bottom: 1rem;
 }
@@ -308,7 +309,7 @@ a .project-link {
     color: #fff;
     padding: 2rem;
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -741,4 +742,91 @@ fieldset {
 
 .fs-textarea::placeholder {
     color: var(--color-text-muted);
+}
+
+
+.container-mockup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1150px;
+    width: 100%;
+    height: 500px;
+    background-color: #ceb593;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 4px solid #4a2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-mockup .mockup {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 8px;
+    border: 4px solid #4a2c2c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mockup-text {
+    max-width: 600px;
+    width: 100%;
+}
+
+.mockup-text h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #4a2c2c;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.mockup-text p{
+    font-family: Arial, sans-serif;
+    color: #4a2c2c;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.mockup-text h3{
+    font-family: Arial, sans-serif;
+    color: #4a2c2c;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.call {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 3rem;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.call h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.call a {
+    font-size: 2rem;
+}
+
+.hero-buttons .btn-lg {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    background-color: #14a717;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
 }
