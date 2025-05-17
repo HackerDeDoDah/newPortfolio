@@ -64,9 +64,9 @@ document.querySelectorAll('.pack-item, .project-card').forEach(item => {
 
 // Enhanced quote system with better error handling and fallback quotes
 const fallbackQuotes = [
-    "Code is poetry written on a digital canvas.",
-    "The best error message is the one that never shows up.",
-    "In the world of coding, simplicity is the ultimate sophistication."
+    "The layout is intuitive and organized.",
+    "You captured our brand perfectly.",
+    "It works perfectly on mobile!"
 ];
 
 function fetchQuotes() {
@@ -116,6 +116,6 @@ function updateQuote(quote) {
 document.addEventListener('DOMContentLoaded', () => {
     fetchQuotes();
     
-    // Auto refresh quote every 30 seconds
-    setInterval(fetchQuotes, 30000);
+    // Auto refresh quote every 10 seconds
+    setInterval(fetchQuotes, 10000);
 });
