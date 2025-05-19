@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /** Variables **/
 
@@ -137,11 +136,19 @@ body {
     align-items: flex-start;
 }
 
+.hero h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #4d54ad;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    margin-bottom:0;
+}
+
 .hero h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 0.4rem;
     color: #4d54ad;
-    font-size: 4.5rem;
+    font-size: 8rem;
     margin-bottom: 1rem;
 }
 
@@ -313,7 +320,7 @@ body {
     margin-bottom: 1rem;
 }
 
-a .project-link {
+.project-link a {
     color: blue;
     text-decoration: underline;
     bottom: 0;
@@ -350,6 +357,33 @@ footer {
     margin-top: 2rem;
 }
 
+/* ----------media------------- */
+
+@media (max-width: 1240px) {
+    .container-top, .container {
+        max-width: 900px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .pack-grid, .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+
 @media (max-width: 768px) {
     .hero {
         grid-template-columns: 1fr;
@@ -363,7 +397,7 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 4rem;
     }
 
     .pack-grid, .projects-grid {
@@ -418,8 +452,13 @@ footer {
     .container-mockup {
         display: grid;
         grid-template-columns: 1fr;
-        padding: 1rem;
+        padding: .5rem;
         width: 90%;
+        text-align: center;
+    }
+
+    .mockup-text h2 {
+        font-size: 1rem;
     }
 
     .contact-wrapper {
@@ -439,8 +478,46 @@ footer {
     .btn-lg {
         align-self: center;
         margin: 0 auto;
+        margin-bottom: 30px;
     }
 }
+
+@media (max-width: 450px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .pack-section h2 {
+        font-size: 2rem;
+    }
+
+    .pack-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+    }
+
+}
+
+/* --------------contact---------------- */
 
 .contact-wrapper {
     display: grid;
@@ -504,6 +581,8 @@ footer {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* -------------mockup------------- */
+
 .container-mockup {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -521,6 +600,7 @@ footer {
 }
 
 .container-mockup .mockup {
+    display: flex;
     width: 100%;
     height: 100%;
     position: relative;
@@ -532,11 +612,14 @@ footer {
 .mockup-text {
     max-width: 600px;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
 }
 
 .mockup-text h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #4a2c2c;
     font-size: 3rem;
@@ -545,6 +628,9 @@ footer {
 }
 
 .mockup-text p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: Arial, sans-serif;
     color: #4a2c2c;
     font-size: 1.5rem;
@@ -552,11 +638,16 @@ footer {
 }
 
 .mockup-text h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: Arial, sans-serif;
     color: #4a2c2c;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+
+/* -----call to action--------- */
 
 .call {
     display: grid;
@@ -589,4 +680,55 @@ footer {
     text-decoration: none;
     border-radius: 12px;
     padding: 0.5rem 1rem;
+}
+
+
+/* ----------------------------- */
+/* -------prices.html----------- */
+/* -----------------------------*/
+
+.price-header {
+    text-align: center;
+    padding: 2rem;
+    background: #ceb593;
+    color: #4a2c2c;
+    margin-top: 60px;
+}
+
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.plan {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.price {
+    font-size: 1.8rem;
+    color: #008080;
+    margin: 0.5rem 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+.end {
+    text-align: center;
+    padding: 1rem;
+    background: #4d54ad;
+    color: #fff;
+    font-size: 1.3rem;
 }
