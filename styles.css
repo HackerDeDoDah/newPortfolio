@@ -741,3 +741,16 @@ ul li {
     color: #fff;
     font-size: 1.3rem;
 }
+
+/* --------advert--------- */
+
+.codoodle-ad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4d54ad;
+    color: #fff;
+    padding: 2rem;
+    margin: 3rem 0;
+}
