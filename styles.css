@@ -41,6 +41,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x:hidden;
 }
 
 .navbar {
@@ -357,9 +358,16 @@ body {
 }
 
 footer {
+    position: absolute;
+    top: auto;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+    background-color: #4d54ad;
+    color: #fff;
+    width: 100%;
+    left: 0;
+    translate: 0 400%;
 }
 
 /* ----------media------------- */
@@ -475,6 +483,12 @@ footer {
         display: grid;
         grid-template-columns: 1fr;
         align-items: center;
+        justify-content:center;
+    }
+    .form-wrapper {
+        max-width: 100%;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .call {
@@ -753,4 +767,84 @@ ul li {
     color: #fff;
     padding: 2rem;
     margin: 3rem 0;
+}
+
+/* semi circles */
+
+.semi1 {
+    position: absolute;
+    top: auto;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: #4d53ad;
+    border-radius: 0 20rem 0 0 ;
+    z-index: -1;
+}
+.semi2 {
+    position: absolute;
+    top: auto;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background-color: #4d53ad;
+    border-radius: 20rem 0 0 0 ;
+    z-index: -1;
+    translate: 0 50%;
+}
+.semi3 {
+    position: absolute;
+    top: auto;
+    right: 20rem;
+    width: 70px;
+    height: 35px;
+    background-color: #4d53ad;
+    border-radius: 20rem 20rem 0 0;
+    z-index: -1;
+    translate: 0 700%;
+}
+.semi4 {
+    position: absolute;
+    top: auto;
+    left: 800px;
+    width: 150px;
+    height: 150px;
+    background-color: #4d53ad;
+    border-radius: 50%;
+    z-index: -1;
+    translate: 0 90%;
+}
+.semi5 {
+    position: absolute;
+    top: auto;
+    left: 250px;
+    width: 200px;
+    height: 200px;
+    background-color: #4d53ad;
+    border-radius: 50%;
+    z-index: -1;
+    translate: 0 50%;
+}
+
+.semi6 {
+    position: absolute;
+    top: auto;
+    right: 200px;
+    width: 100px;
+    height: 100px;
+    background-color: #4d53ad;
+    border-radius: 50%;
+    z-index: -1;
+    translate: 0 50%;
+}
+.semi7 {
+    position: absolute;
+    top: auto;
+    left: 600px;
+    width: 100px;
+    height: 100px;
+    background-color: #4d53ad;
+    border-radius: 50%;
+    z-index: -1;
+    translate: 0 100%;
 }
