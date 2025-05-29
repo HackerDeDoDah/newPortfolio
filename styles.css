@@ -963,10 +963,20 @@ h4{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: #4d54ad;
     color: #fff;
     padding: 2rem;
     margin: 3rem 0;
+}
+
+.codoodle-ad .hero-buttons {
+    margin-bottom: 20px;
+}
+
+.codoodle-ad a {
+    font-size: 1rem;
+    color: #fff;
 }
 
 /* semi circles */
