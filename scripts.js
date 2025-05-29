@@ -1,16 +1,16 @@
 // Mobile menu functionality
 const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const mobileNav = document.querySelector('.mobile-nav');
 
 mobileMenu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    mobileNav.classList.toggle('active');
     mobileMenu.classList.toggle('active');
 });
 
 // Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('.mobile-nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+        mobileNav.classList.remove('active');
         mobileMenu.classList.remove('active');
     });
 });
