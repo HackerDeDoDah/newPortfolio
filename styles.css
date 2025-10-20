@@ -8,18 +8,33 @@
 /** Variables **/
 
 :root {
-    --color-background: #e7e7e7;
-    --color-background-alt: #888888;
-    --color-border-active: #da7105;
-    --color-border-default: #d1d1d1;
-    --color-highlight: #fdcf4c;
-    --color-primary: #b64e08;
-    --color-primary-active: #79320e;
-    --color-text-default: #262626;
-    --color-text-muted: #4f4f4f;
+    /* Modern palette */
+    --color-bg: #f6f7fb; /* page background */
+    --color-surface: #ffffff; /* cards, containers */
+    --color-muted-surface: #f1f5f9;
+    --color-border: #e6e9ef;
+    --color-primary: #4f46e5; /* indigo */
+    --color-primary-700: #3730a3;
+    --color-accent: #06b6d4; /* teal */
+    --color-text: #0f1724; /* charcoal */
+    --color-text-muted: #475569;
+    --color-ghost: rgba(255,255,255,0.6);
 
-    --font-family-body: "Figtree", system-ui, sans-serif;
+    --font-family-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-family-display: "Poppins", system-ui, sans-serif;
+}
+
+/* Dark theme overrides when [data-theme="dark"] is set on <html> */
+:root[data-theme="dark"] {
+    --color-bg: #071023; /* deep navy */
+    --color-surface: #0b1220;
+    --color-muted-surface: #081427;
+    --color-border: rgba(255,255,255,0.04);
+    --color-primary: #7c8cff; /* softer indigo on dark */
+    --color-primary-700: #5b63d8;
+    --color-accent: #06b6d4;
+    --color-text: #e6eef8;
+    --color-text-muted: #9aa4b2;
 }
 
 /** Base **/
@@ -35,13 +50,14 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ceb593;
+    font-family: var(--font-family-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     font-optical-sizing: auto;
     font-style: normal;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -50,28 +66,28 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    height: 60px;
-    background-color: rgba(206, 181, 147, 0.95);
-    backdrop-filter: blur(5px);
+    height: 64px;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
     box-sizing: border-box;
 }
 
 .logo {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #4a2c2c;
+    color: var(--color-primary-700);
     font-size: 1.5rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.12rem;
 }
 
 .logo a {
     text-decoration: none;
-    color: #4a2c2c;
+    color: var(--color-primary-700);
 }
 
 .nav-links {
@@ -81,10 +97,10 @@ body {
 }
 
 .nav-links a {
-    color: #4a2c2c;
+    color: var(--color-text);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.18s ease;
     position: relative;
 }
 
@@ -95,8 +111,8 @@ body {
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: #4d54ad;
-    transition: width 0.3s;
+    background-color: var(--color-primary);
+    transition: width 0.22s ease;
 }
 
 .nav-links a:hover::after {
@@ -113,21 +129,21 @@ body {
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: #4a2c2c;
-    transition: all 0.3s ease-in-out;
+    background-color: var(--color-text);
+    transition: all 0.25s ease-in-out;
 }
 
 .mobile-nav {
     display: none;
     position: fixed;
-    top: 60px;
+    top: 64px;
     left: 0;
     right: 0;
     height: 100vh;
-    background-color: rgba(206, 181, 147, 0.95);
-    backdrop-filter: blur(5px);
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
 }
 
 .mobile-nav.active {
@@ -146,9 +162,9 @@ body {
 }
 
 .mobile-nav-links a {
-    color: #4a2c2c;
+    color: var(--color-text);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.2rem;
 }
 
@@ -160,7 +176,7 @@ body {
     height: auto;
     display: block;
     margin: 2rem auto;
-    border: 3px solid #4a2c2c;
+    border: 2px solid var(--color-border);
     border-radius: 8px;
 }
 
@@ -179,9 +195,9 @@ body {
 
 .container h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #4a2c2c;
+    color: var(--color-text);
     font-size: 3rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.04rem;
     margin-bottom: 0.5rem;
     text-align: center;
 }
@@ -203,24 +219,24 @@ body {
 
 .hero h3 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #4d54ad;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    margin-bottom:0;
+    color: var(--color-primary-700);
+    font-size: 1.6rem;
+    letter-spacing: 0.08rem;
+    margin-bottom: 0.25rem;
 }
 
 .hero h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    letter-spacing: 0.4rem;
-    color: #4d54ad;
-    font-size: 8rem;
+    letter-spacing: 0.12rem;
+    color: var(--color-primary);
+    font-size: 6rem;
     margin-bottom: 1rem;
 }
 
 .hero h2 {
-    color: #4a2c2c;
+    color: var(--color-text-muted);
     margin-bottom: 2rem;
-    max-width: none;
+    max-width: 65ch;
 }
 
 .hero-buttons {
@@ -229,20 +245,22 @@ body {
 }
 
 .hero-buttons .btn {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid transparent;
-    background-color: #4d54ad;
+    background-color: var(--color-primary);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    padding: 0.5rem;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    box-shadow: 0 6px 18px rgba(79,70,229,0.12);
 }
 
 .hero-buttons .btn:hover {
-    background-color: #a79378;
-    color: #4a2c2c;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: var(--color-primary-700);
+    color: #fff;
+    transition: background-color 0.18s, color 0.18s;
 }
 
 .hero-image-wrapper {
@@ -259,7 +277,7 @@ body {
 .pack-container {
     width: 100%;
     margin: 0;
-    background-color: #4d54ad;
+    background-color: var(--color-primary);
     padding: 0;
 }
 
@@ -272,8 +290,8 @@ body {
 .pack-section h2 {
     text-align: center;
     color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .pack-section h3 {
@@ -341,9 +359,9 @@ body {
 
 .projects h2 {
     text-align: center;
-    color: #4a2c2c;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    color: var(--color-text);
+    font-size: 2rem;
+    margin-bottom: 2rem;
 }
 
 .projects-grid {
@@ -351,8 +369,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 0 1rem;
-    border: 4px solid #4a2c2c;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background-color: var(--color-surface);
 }
 
 .project-card {
@@ -367,7 +386,7 @@ body {
 
 .project-card img {
     width: 100%;
-    border: 2px solid #4a2c2c;
+    border: 2px solid var(--color-border);
     border-radius: 4px;
     margin-bottom: 1rem;
     transition: transform 0.3s, box-shadow 0.3s ease;
@@ -379,23 +398,23 @@ body {
 }
 
 .project-card h3 {
-    color: #4a2c2c;
-    margin-bottom: 1rem;
+    color: var(--color-primary-700);
+    margin-bottom: 0.75rem;
 }
 
 .project-card p {
-    color: #4a2c2c;
+    color: var(--color-text-muted);
     margin-bottom: 1rem;
 }
 
 .project-link a {
-    color: blue;
+    color: var(--color-accent);
     text-decoration: underline;
     bottom: 0;
 }
 
 .quote-container {
-    background-color: #4d54ad;
+    background-color: var(--color-primary);
     color: #fff;
     padding: 2rem;
     text-align: center;
@@ -422,16 +441,16 @@ body {
 footer {
     position: relative;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     margin-top: 2rem;
-    background-color: #4d54ad;
+    background-color: var(--color-primary-700);
     color: #fff;
     width: 100%;
 }
 
 h4{
     font-size:16px;
-    color: #4a2c2c;
+    color: var(--color-text);
 }
 
 /* ----------media------------- */
@@ -529,7 +548,7 @@ h4{
     .menu-toggle .bar {
         width: 25px;
         height: 3px;
-        background-color: #4a2c2c;
+        background-color: var(--color-text);
         transition: transform 0.3s, opacity 0.3s;
         border-radius: 2px;
     }
@@ -727,7 +746,7 @@ h4{
 }
 
 #contact h1 {
-    color: #4a2c2c;
+    color: var(--color-text);
     font-size: 2.5rem;
     margin-bottom: 2rem;
 }
@@ -735,7 +754,7 @@ h4{
 .contact-form {
     max-width: 500px;
     align-items: center;
-    background-color: #4d54ad;
+    background-color: var(--color-surface);
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -745,13 +764,13 @@ h4{
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
-    border: 2px solid #4a2c2c;
+    border: 2px solid var(--color-border);
     border-radius: 8px;
     font-size: 1.2rem;
 }
 
 .contact-form input[type="submit"] {
-    background-color: #4d54ad;
+    background-color: var(--color-primary);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -759,7 +778,7 @@ h4{
 }
 
 .contact-form .btn {
-    background-color: #6972ea;
+    background-color: var(--color-primary);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -768,7 +787,7 @@ h4{
 }
 
 .contact-form .btn:hover {
-    background-color: #4a2c2c;
+    background-color: var(--color-primary-700);
     color: #fff;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -783,11 +802,11 @@ h4{
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    background-color: #ceb593;
+    background-color: var(--color-muted-surface);
     margin: 0 auto;
     padding: 2rem;
     border-radius: 8px;
-    border: 4px solid #4a2c2c;
+    border: 1px solid var(--color-border);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -797,7 +816,7 @@ h4{
     height: 100%;
     position: relative;
     border-radius: 8px;
-    border: 4px solid #4a2c2c;
+    border: 1px solid var(--color-border);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -813,7 +832,7 @@ h4{
     flex-direction: column;
     justify-content: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #4a2c2c;
+    color: var(--color-text);
     font-size: 3rem;
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;
@@ -824,7 +843,7 @@ h4{
     flex-direction: column;
     justify-content: center;
     font-family: Arial, sans-serif;
-    color: #4a2c2c;
+    color: var(--color-text);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -834,7 +853,7 @@ h4{
     flex-direction: column;
     justify-content: center;
     font-family: Arial, sans-serif;
-    color: #4a2c2c;
+    color: var(--color-text);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -882,8 +901,8 @@ h4{
 .price-header {
     text-align: center;
     padding: 4rem 2rem 2rem;
-    background: #ceb593;
-    color: #4a2c2c;
+    background: var(--color-bg);
+    color: var(--color-text);
     margin-top: 60px;
 }
 
@@ -895,7 +914,7 @@ h4{
 
 .price-header p {
     font-size: 1.2rem;
-    color: #4a2c2c;
+    color: var(--color-text);
 }
 
 .pricing {
@@ -924,13 +943,13 @@ h4{
 
 .plan h2 {
     font-size: 1.8rem;
-    color: #4a2c2c;
+    color: var(--color-text);
     margin-bottom: 1rem;
 }
 
 .price {
     font-size: 2.2rem;
-    color: #4d54ad;
+    color: var(--color-primary);
     margin: 1rem 0;
     font-weight: bold;
 }
@@ -943,14 +962,14 @@ h4{
 
 .plan ul li {
     margin: 0.8rem 0;
-    color: #4a2c2c;
+    color: var(--color-text);
     font-size: 1.1rem;
 }
 
 .end {
     text-align: center;
     padding: 2rem;
-    background: #4d54ad;
+    background: var(--color-primary);
     color: #fff;
     font-size: 1.3rem;
     margin-top: 2rem;
@@ -964,7 +983,7 @@ h4{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #4d54ad;
+    background-color: var(--color-primary);
     color: #fff;
     padding: 2rem;
     margin: 3rem 0;
@@ -983,7 +1002,7 @@ h4{
 
 .semi1, .semi2, .semi3, .semi4, .semi5, .semi6, .semi7 {
     position: fixed;
-    background-color: #4d53ad;
+    background-color: var(--color-primary);
     z-index: -1;
 }
 

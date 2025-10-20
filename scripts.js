@@ -118,4 +118,37 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Auto refresh quote every 10 seconds
     setInterval(fetchQuotes, 10000);
+    
+    // THEME: initialize theme based on saved preference or system preference
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            if (themeToggle) themeToggle.textContent = '🌙';
+        } else {
+            root.removeAttribute('data-theme');
+            if (themeToggle) themeToggle.textContent = '☀️';
+        }
+    }
+
+    // determine initial theme
+    const savedTheme = localStorage.getItem('site-theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+    }
+
+    // toggle handler
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const next = isDark ? 'light' : 'dark';
+            applyTheme(next);
+            localStorage.setItem('site-theme', next);
+        });
+    }
 });
