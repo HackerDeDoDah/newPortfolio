@@ -126,10 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyTheme(theme) {
         if (theme === 'dark') {
             root.setAttribute('data-theme', 'dark');
-            if (themeToggle) themeToggle.textContent = '🌙';
+            if (themeToggle) themeToggle.textContent = 'Dark';
         } else {
             root.removeAttribute('data-theme');
-            if (themeToggle) themeToggle.textContent = '☀️';
+            if (themeToggle) themeToggle.textContent = 'Light';
         }
     }
 
